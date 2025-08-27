@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import {
+  About,
   Certificates,
   Contact,
   Education,
@@ -9,7 +10,6 @@ import {
   Projects,
   Skills,
 } from "./components";
-import About from "./components/About";
 import { person } from "./lib/person";
 
 export default function Page() {

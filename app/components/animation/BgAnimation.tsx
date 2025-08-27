@@ -123,7 +123,7 @@ function RainParticles({ count = 1000 }: { count?: number }) {
 }
 
 // ---- Background Orchestrator --------------------------------
-export default function ThreeBackground({ mode = "snow" as "snow" | "rain" }) {
+export default function BgAnimation({ mode = "snow" as "snow" | "rain" }) {
   return (
     <div className="absolute inset-0 -z-10">
       <Suspense fallback={null}>

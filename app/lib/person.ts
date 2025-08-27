@@ -1,11 +1,11 @@
 export type Edu = { year: string; institute: string; title: string }
 export type Exp = { year: string; institute: string; title: string }
-export type SkillBar = { name: string; label?: string; percentage?: string; width: string; focusable?: boolean }
+export type SkillItem = { name: string; label?: string; percentage?: string; width: string; focusable?: boolean }
 export type Skills = {
-  languages: SkillBar[]; js_frameworks: SkillBar[]; css_libraries: SkillBar[];
-  backend: SkillBar[]; platforms: SkillBar[]; tools: SkillBar[]; others: SkillBar[]; all?: SkillBar[]
+  languages: SkillItem[]; js_frameworks: SkillItem[]; css_libraries: SkillItem[];
+  backend: SkillItem[]; platforms: SkillItem[]; tools: SkillItem[]; others: SkillItem[]; all?: SkillItem[]
 }
-export type Certificate = { date: string; institute: string; title: string; link: string }
+export type Certificate = { year: string; institute: string; title: string; url: string }
 export type Project = { name: string; description: string; url?: string; tags: string[] }
 export type Person = {
   name: string; role: string; location: string; phone: string; email: string;
@@ -24,15 +24,15 @@ export const person: Person = {
     { name: 'LinkedIn', link: 'https://www.linkedin.com/in/sayed2017' },
   ],
   educations: [
-    { year: '2011 – 2015', institute: 'American International University‑Bangladesh', title: 'BSc. Computer Science' },
-    { year: '2009 – 2011', institute: 'Govt. Adamjee Nagar M W College', title: 'HSC (Science)' },
-    { year: '2007 – 2009', institute: 'M W High School', title: 'SSC (Science)' }
+    { year: '2011 — 2015', institute: 'American International University—Bangladesh', title: 'BSc. Computer Science' },
+    { year: '2009 — 2011', institute: 'Govt. Adamjee Nagar M W College', title: 'HSC (Science)' },
+    { year: '2007 — 2009', institute: 'M W High School', title: 'SSC (Science)' }
   ],
   experiences: [
-    { year: 'Jan 2023 – Present', institute: 'ACI Logistics Ltd.', title: 'Software Engineer (Full Stack)' },
-    { year: 'Dec 2017 – Dec 2022', institute: 'Storrea Ltd.', title: 'Software Engineer (Frontend)' },
-    { year: 'Feb 2017 – Oct 2017', institute: 'Ennvisio Digital Private Ltd.', title: 'Software Engineer (Web Developer)' },
-    { year: 'Mar 2015 – Dec 2015', institute: 'American International University‑Bangladesh', title: 'Lab Assistant' }
+    { year: 'Jan 2023 — Present', institute: 'ACI Logistics Ltd.', title: 'Software Engineer (Full Stack)' },
+    { year: 'Dec 2017 — Dec 2022', institute: 'Storrea Ltd.', title: 'Software Engineer (Frontend)' },
+    { year: 'Feb 2017 — Oct 2017', institute: 'Ennvisio Digital Private Ltd.', title: 'Software Engineer (Web Developer)' },
+    { year: 'Mar 2015 — Dec 2015', institute: 'American International University—Bangladesh', title: 'Lab Assistant' }
   ],
   skills: {
     languages: [
@@ -67,7 +67,6 @@ export const person: Person = {
     ],
     tools: [
       { name: 'VS Code', percentage: '95%', width: 'w-[95%]' },
-      { name: 'GitHub', percentage: '95%', width: 'w-[95%]', focusable: true },
       { name: 'Git', percentage: '95%', width: 'w-[95%]' },
       { name: 'Postman', percentage: '75%', width: 'w-[75%]' },
       { name: 'Figma', percentage: '65%', width: 'w-[65%]', focusable: true },
@@ -89,9 +88,9 @@ export const person: Person = {
     ],
   },
   certificates: [
-    { date: 'June 24, 2022', institute: 'freecodecamp.org', title: 'Responsive Web Design', link: 'https://www.freecodecamp.org/certification/abu-sayed/responsive-web-design' },
-    { date: 'July 29, 2022', institute: 'freecodecamp.org', title: 'Front End Development Libraries', link: 'https://www.freecodecamp.org/certification/abu-sayed/front-end-development-libraries' },
-    { date: 'July 17, 2022', institute: 'freecodecamp.org', title: 'JavaScript Algorithms and Data Structures', link: 'https://www.freecodecamp.org/certification/abu-sayed/javascript-algorithms-and-data-structures' },
+    { year: 'June 24, 2022', institute: 'freecodecamp.org', title: 'Responsive Web Design', url: 'https://www.freecodecamp.org/certification/abu-sayed/responsive-web-design' },
+    { year: 'July 29, 2022', institute: 'freecodecamp.org', title: 'Front End Development Libraries', url: 'https://www.freecodecamp.org/certification/abu-sayed/front-end-development-libraries' },
+    { year: 'July 17, 2022', institute: 'freecodecamp.org', title: 'JavaScript Algorithms and Data Structures', url: 'https://www.freecodecamp.org/certification/abu-sayed/javascript-algorithms-and-data-structures' },
   ],
   projects: [
     { name: 'Shwapno App Store', description: "Directory of internal apps used by the company.", url: 'https://apps.shwapno.net/', tags: ['React', 'Next.js', 'Tailwind'] },

@@ -1,21 +1,21 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import type { Person } from "../lib/person";
-import ThreeBackground from "./ThreeBackground";
+import type { Person } from "../../lib/person";
+import BgAnimation from "../animation/BgAnimation";
 
 export default function About({ person }: { person: Person }) {
   return (
     <div id="home" className="relative min-h-screen grid place-items-center">
       {/* Change the mode prop to 'snow' | 'rain' */}
-      <ThreeBackground mode="snow" />
+      <BgAnimation mode="snow" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-[220px,1fr] gap-8 md:gap-12 items-center py-28">
         <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-glow ring-1 ring-white/10">
-          {/* Replace /me.jpg with your real photo */}
           <Image
             src="/me.png"
-            alt="Abu Sayed portrait"
-            fill
+            alt="abu sayed"
+            width={250}
+            height={250}
             className="object-cover"
             priority
           />
@@ -27,7 +27,20 @@ export default function About({ person }: { person: Person }) {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-5xl font-bold tracking-tight"
           >
-            Hi, I’m Abu Sayed 👋
+            Hi, I’m Abu Sayed
+            <motion.span
+              animate={{
+                x: [0, -15, 15, -15, 15, 0],
+              }}
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatDelay: 0.5,
+              }}
+              className="inline-block ml-5"
+            >
+              👋
+            </motion.span>
           </motion.h1>
           <p className="mt-4 text-neutral-300 leading-relaxed max-w-2xl">
             Full‑stack developer specializing in{" "}

@@ -15,7 +15,7 @@ const sections = [
   "contact",
 ];
 
-export default function Nav() {
+const Nav = () => {
   const active = useScrollSpy(sections);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -48,9 +48,8 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
-        {/* Logo with AS Circle */}
-        <div className="flex items-center gap-2">
-          <span className="w-12 h-12 rounded-full text-white text-2xl font-bold flex items-center justify-center bg-brand-500">
+        <div className="flex items-center gap-3">
+          <span className="w-12 h-12 rounded-full border-2 border-white/20 text-white text-xl font-bold flex items-center justify-center">
             AS
           </span>
           <a
@@ -120,4 +119,6 @@ export default function Nav() {
       </AnimatePresence>
     </header>
   );
-}
+};
+
+export default Nav;

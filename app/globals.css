@@ -14,8 +14,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
-/* Fancy gradient ring utility */
+/* Gradient card background and shadow */
 .card-gradient {
   background: radial-gradient(
     1200px 600px at var(--x, 50%) var(--y, 50%),
@@ -26,4 +25,20 @@ html {
 .shadow-glow {
   box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3),
     0 8px 40px -8px rgba(99, 102, 241, 0.45);
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+.animate-shake {
+  animation: shake 0.5s infinite ease-in-out;
 }
