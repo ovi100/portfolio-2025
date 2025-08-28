@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+import { HiArrowNarrowRight } from "react-icons/hi";
 
 type CardProps = {
   item: any;
@@ -66,17 +67,20 @@ const Card = ({ item }: CardProps) => {
       className="card-gradient group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden p-5 transition will-change-transform"
     >
       <div className="flex items-center justify-between gap-3">
-        <h3 className="font-semibold text-white/90 group-hover:text-brand-200 transition">
+        <h3 className="font-semibold text-white/90 group-hover:text-white/50 transition">
           {item.name}
         </h3>
-        {item.url && <span className="text-xs text-brand-300">Visit ↗</span>}
+        <div className="flex items-center gap-x-1">
+          <span className="text-xs text-brand-300">Visit</span>
+          <HiArrowNarrowRight />
+        </div>
       </div>
       <p className="mt-2 text-sm text-neutral-300">{item.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {item.tags?.map((tag: string) => (
           <span
             key={tag}
-            className="px-2.5 py-1 rounded-full text-xs bg-brand-500/20 text-brand-200 ring-1 ring-brand-500/40"
+            className="px-1.5 py-0.5 rounded text-[11px] bg-white/10 text-white ring-1 ring-white/10"
           >
             {tag}
           </span>
