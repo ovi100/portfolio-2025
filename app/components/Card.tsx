@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { getExactYears } from "../utils";
 
 type CardProps = {
   item: any;
@@ -20,8 +21,8 @@ const Card = ({ item }: CardProps) => {
   const keys = Object.keys(item);
   const normalCard = keys.includes("title") && !keys.includes("url");
   const normalLinkCard = keys.includes("title") && keys.includes("url");
-  const projectCard =
-    !keys.includes("title") && keys.includes("url") && keys.includes("tags");
+  const projectCard = !keys.includes("title") && keys.includes("url") && keys.includes("tags");
+  const experienceCard = keys.includes("startDate") && keys.includes("endDate");
 
   const Content = () => (
     <>
@@ -29,6 +30,9 @@ const Card = ({ item }: CardProps) => {
         <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
         <p className="text-sm text-neutral-300">{item.institute}</p>
         <p className="text-xs text-neutral-400">{item.year}</p>
+        {experienceCard && (
+          <p className="text-xs text-neutral-400 mt-1">{getExactYears(item.startDate, item.endDate)}</p>
+        )}
       </div>
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition"

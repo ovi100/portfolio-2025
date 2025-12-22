@@ -13,7 +13,6 @@ import {
 import { person } from "./lib/person";
 
 export default function Page() {
-  // Hydration fix for hash on initial load
   useEffect(() => {
     if (location.hash)
       document

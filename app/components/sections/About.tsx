@@ -58,9 +58,10 @@ export default function About({ person }: { person: Person }) {
                 href={s.link}
                 target="_blank"
                 rel="noreferrer"
-                className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/15 ring-1 ring-white/15 text-sm"
+                className="flex items-center gap-x-2 px-4 rounded-full bg-white/10 hover:bg-white/15 ring-1 ring-white/15 text-sm"
               >
-                {s.name}
+                <span className="border-r border-gray-500 py-2 pr-2" dangerouslySetInnerHTML={{ __html: s.icon }} />
+                <span className="py-2">{s.name}</span>
               </a>
             ))}
           </div>
