@@ -1,10 +1,19 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import type { Person } from "../../lib/person";
 import BgAnimation from "../animation/BgAnimation";
+import { FaGithub, FaLinkedin, FaFacebookF, FaInstagram } from "react-icons/fa";
+import { JSX } from "react";
+import { Person } from "@/app/types";
 
 export default function About({ person }: { person: Person }) {
+  // export type icons={ icon: string, name: string; link: string };
+  const icons: Record<string, JSX.Element> = {
+    'GitHub': <FaGithub size={22} />,
+    'LinkedIn': <FaLinkedin size={22} />,
+    'Facebook': <FaFacebookF size={22} />,
+    'Instagram': <FaInstagram size={22} />,
+  };
   return (
     <div id="home" className="relative min-h-screen grid place-items-center">
       {/* Change the mode prop to 'snow' | 'rain' */}
@@ -58,10 +67,10 @@ export default function About({ person }: { person: Person }) {
                 href={s.link}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-x-2 px-4 rounded-full bg-white/10 hover:bg-white/15 ring-1 ring-white/15 text-sm"
+                className="p-2 rounded bg-white/10 hover:bg-white/15 text-green-400 ring-1 
+                ring-white/15 text-sm scale-100 hover:scale-105 transition-all duration-300"
               >
-                <span className="border-r border-gray-500 py-2 pr-2" dangerouslySetInnerHTML={{ __html: s.icon }} />
-                <span className="py-2">{s.name}</span>
+                {icons[s.name]}
               </a>
             ))}
           </div>

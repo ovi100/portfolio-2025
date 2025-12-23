@@ -1,8 +1,8 @@
 import Section from "./Section";
-import type { Person } from "../../lib/person";
 import { FiMapPin, FiMail, FiPhone } from "react-icons/fi";
 import { useCallback, useState } from "react";
 import ContactForm from "../ContactForm";
+import { Person } from "@/app/types";
 
 type ContactItem = {
   icon: React.ReactElement;

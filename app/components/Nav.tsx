@@ -3,13 +3,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useScrollSpy } from "../hooks";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { LuCode } from "react-icons/lu";
 import { motion, AnimatePresence } from "framer-motion";
 
 const sections = [
   "home",
+  "skills",
   "experience",
   "education",
-  "skills",
   "certifications",
   "projects",
   "contact",
@@ -43,14 +44,13 @@ const Nav = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition backdrop-blur ${
-        scrolled ? "bg-black/40 border-b border-white/10" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition backdrop-blur ${scrolled ? "bg-black/40 border-b border-white/10" : "bg-transparent"
+        }`}
     >
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
         <div className="flex items-center gap-3">
-          <span className="w-12 h-12 rounded-full border-2 border-white/20 text-white text-xl font-bold flex items-center justify-center">
-            AS
+          <span className="text-white text-xl font-bold">
+            <LuCode />
           </span>
           <a
             href="#home"
@@ -66,16 +66,24 @@ const Nav = () => {
             <li key={id}>
               <Link
                 href={`#${id}`}
-                className={`px-3 py-1.5 rounded-full transition-colors ${
-                  active === id
-                    ? "bg-brand-500/20 text-brand-200 ring-1 ring-brand-500/50"
-                    : "hover:text-brand-200 text-neutral-300"
-                }`}
+                className={`px-3 py-1.5 rounded-full transition-colors ${active === id
+                  ? "bg-brand-500/20 text-brand-200 ring-1 ring-brand-500/50"
+                  : "hover:text-brand-200 text-neutral-300"
+                  }`}
               >
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </Link>
             </li>
           ))}
+          <li>
+            <a
+              className="bg-white/10 text-green-300 rounded-3xl px-4 py-2 hover:text-green-200 transition-colors"
+              href="https://shorturl.at/oAYli"
+              target="_blank"
+            >
+              Hire me
+            </a>
+          </li>
         </ul>
 
         {/* Mobile Hamburger */}
@@ -104,15 +112,23 @@ const Nav = () => {
                 <li key={id}>
                   <Link
                     href={`#${id}`}
-                    className={`block py-2 px-4 rounded hover:bg-purple-500 hover:text-white transition ${
-                      active === id ? "bg-purple-500/20 text-purple-200" : ""
-                    }`}
-                    onClick={() => setOpen(false)} // Close menu on link click
+                    className={`block py-2 px-4 rounded hover:bg-purple-500 hover:text-white transition ${active === id ? "bg-purple-500/20 text-purple-200" : ""
+                      }`}
+                    onClick={() => setOpen(false)}
                   >
                     {id.charAt(0).toUpperCase() + id.slice(1)}
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  className="bg-white/10 text-green-300 rounded-3xl px-4 py-2 hover:text-green-200 transition-colors"
+                  href="https://shorturl.at/oAYli"
+                  target="_blank"
+                >
+                  Hire me
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}

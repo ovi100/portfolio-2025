@@ -1,28 +1,20 @@
-export type Edu = { year: string; institute: string; title: string }
-export type Exp = { year: string; institute: string; title: string, startDate?: string; endDate?: string }
-export type SkillItem = { name: string; label?: string; percentage?: string; width: string; focusable?: boolean }
-export type Skills = {
-  languages: SkillItem[]; js_frameworks: SkillItem[]; css_libraries: SkillItem[];
-  backend: SkillItem[]; platforms: SkillItem[]; tools: SkillItem[]; others: SkillItem[]; all?: SkillItem[]
-}
-export type Certificate = { year: string; institute: string; title: string; url: string }
-export type Project = { name: string; description: string; url?: string; tags: string[] }
-export type Person = {
-  name: string; role: string; location: string; phone: string; email: string;
-  social: { icon: string, name: string; link: string }[];
-  educations: Edu[]; experiences: Exp[]; skills: Skills; certificates: Certificate[]; projects: Project[];
-}
+import { Person } from "../types";
+
+const day = new Date().getDate();
+const month = new Date().getMonth();
+const year = new Date().getFullYear();
 
 export const person: Person = {
-  name: 'Abu Sayed',
+  name: 'Md. Abu Sayed',
   role: 'Software Engineer — Full Stack',
-  location: 'Dhaka, Bangladesh',
-  phone: '(+880) 1675600270',
+  location: 'Berlin, Germany',
+  phone: '(+49) 17637729384',
   email: 'sayeed.abu02@gmail.com',
   social: [
-    { icon: "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-github-icon lucide-github\"><path d=\"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4\"/><path d=\"M9 18c-4.51 2-5-2-7-2\"/></svg>", name: 'GitHub', link: 'https://github.com/ovi100' },
-    { icon: "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-linkedin-icon lucide-linkedin\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>", name: 'LinkedIn', link: 'https://www.linkedin.com/in/sayed2017' },
-    { icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram-icon lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>', name: 'Instagram', link: 'https://www.instagram.com/ovi_2016' },
+    { name: 'GitHub', link: 'https://github.com/ovi100' },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/sayed2017' },
+    { name: 'Facebook', link: 'https://www.facebook.com/sayed2017' },
+    { name: 'Instagram', link: 'https://www.instagram.com/ovi_2016' },
   ],
   educations: [
     { year: '2011 — 2015', institute: 'American International University—Bangladesh', title: 'BSc. Computer Science' },
@@ -33,89 +25,86 @@ export const person: Person = {
     {
       year: 'Jan 2023 — Jan 2026',
       institute: 'ACI Logistics Ltd.',
-      title: 'Software Engineer (Full Stack)',
+      title: 'Full Stack Developer',
       startDate: '2023-01-08',
       endDate: '2026-01-08'
     },
     {
       year: 'Dec 2017 — Dec 2022',
       institute: 'Storrea Ltd.',
-      title: 'Software Engineer (Frontend)',
+      title: 'Frontend Developer(Mid Level)',
       startDate: '2017-12-02',
       endDate: '2022-12-31'
     },
     {
       year: 'Feb 2017 — Oct 2017',
       institute: 'Ennvisio Digital Private Ltd.',
-      title: 'Software Engineer (Web Developer)',
+      title: 'Frontend Developer',
       startDate: '2017-02-01',
       endDate: '2017-10-31'
     },
     {
       year: 'Mar 2015 — Dec 2015',
       institute: 'American International University—Bangladesh',
-      title: 'Lab Assistant',
+      title: 'Lab Assistant-Internship',
       startDate: '2015-03-01',
       endDate: '2015-12-31'
     }
   ],
   skills: {
-    languages: [
-      { name: 'JavaScript', label: '90%', width: 'w-[90%]', focusable: true },
-      { name: 'TypeScript', label: '80%', width: 'w-[80%]', focusable: true },
-      { name: 'ES6+', label: '90%', width: 'w-[90%]', focusable: true },
-      { name: 'Python (Basic)', label: '50%', width: 'w-[50%]' },
-    ],
-    js_frameworks: [
-      { name: 'React', label: '85%', width: 'w-[85%]', focusable: true },
-      { name: 'React Native', label: '70%', width: 'w-[70%]' },
-      { name: 'Next.js', label: '65%', width: 'w-[65%]', focusable: true },
-      { name: 'Knockout.js', label: '90%', width: 'w-[90%]' },
-    ],
-    css_libraries: [
-      { name: 'Tailwind CSS', percentage: '90%', width: 'w-[90%]', focusable: true },
-      { name: 'Bootstrap', percentage: '95%', width: 'w-[95%]' },
-      { name: 'Material UI', percentage: '80%', width: 'w-[80%]', focusable: true },
-      { name: 'NextUI', percentage: '85%', width: 'w-[85%]' },
+    frontend: [
+      { name: 'React', label: 'Expert', width: 'w-[90%]', startDate: '2022-10-01', endDate: `${year}-${month}-${day}` },
+      { name: 'React Native', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'JavaScript', label: 'Expert', width: 'w-[90%]', startDate: '2017-01-01', endDate: `${year}-${month}-${day}` },
+      { name: 'TypeScript', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Next.js', label: 'Intermediate', width: 'w-[60%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Tailwind CSS', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
     ],
     backend: [
-      { name: 'Node.js', percentage: '75%', width: 'w-[75%]' },
-      { name: 'Express.js', percentage: '75%', width: 'w-[75%]', focusable: true },
-      { name: 'Firebase', percentage: '85%', width: 'w-[85%]' },
-      { name: 'Mongoose', percentage: '80%', width: 'w-[80%]', focusable: true },
-    ],
-    platforms: [
-      { name: 'Vercel', percentage: '95%', width: 'w-[95%]' },
-      { name: 'Netlify', percentage: '95%', width: 'w-[95%]' },
-      { name: 'Render', percentage: '90%', width: 'w-[90%]' },
-      { name: 'App Center', percentage: '90%', width: 'w-[90%]' },
+      { name: 'Node.js', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Python', label: 'Intermediate', width: 'w-[60%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Express.js', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Firebase', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'SQL', label: 'Intermediate', width: 'w-[60%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'MongoDB', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
     ],
     tools: [
-      { name: 'VS Code', percentage: '95%', width: 'w-[95%]' },
-      { name: 'Git', percentage: '95%', width: 'w-[95%]' },
-      { name: 'Postman', percentage: '75%', width: 'w-[75%]' },
-      { name: 'Figma', percentage: '65%', width: 'w-[65%]', focusable: true },
-      { name: 'Zoho Sprint', percentage: '90%', width: 'w-[90%]', focusable: true },
-      { name: 'Notion', percentage: '90%', width: 'w-[90%]' },
-      { name: 'ChatGPT', percentage: '70%', width: 'w-[70%]', focusable: true },
+      { name: 'Git & GitHub', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Figma', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Vercel', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Render', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Notion', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'AI Tools', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
     ],
     others: [
-      { name: 'RESTful APIs', percentage: '95%', width: 'w-[95%]', focusable: true },
-      { name: 'Chart.js', percentage: '90%', width: 'w-[90%]' },
-      { name: 'Maps API', percentage: '90%', width: 'w-[90%]', focusable: true },
-      { name: 'JSON', percentage: '90%', width: 'w-[90%]' },
-      { name: 'JWT', percentage: '90%', width: 'w-[90%]', focusable: true },
-      { name: 'jQuery', percentage: '90%', width: 'w-[90%]' },
-      { name: 'AJAX', percentage: '90%', width: 'w-[90%]' },
-      { name: 'Axios', percentage: '90%', width: 'w-[90%]' },
-      { name: 'HTML5', percentage: '95%', width: 'w-[95%]' },
-      { name: 'CSS3', percentage: '95%', width: 'w-[95%]' },
-    ],
+      { name: 'RESTful APIs', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Chart.js', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Three.js', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Maps API', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'JWT', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      { name: 'Supabase', label: 'Advance', width: 'w-[75%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+      // { name: 'HotUpdater', label: 'Expert', width: 'w-[90%]', startDate: '2023-01-08', endDate: `${year}-${month}-${day}` },
+    ]
   },
   certificates: [
-    { year: 'June 24, 2022', institute: 'freecodecamp.org', title: 'Responsive Web Design', url: 'https://www.freecodecamp.org/certification/abu-sayed/responsive-web-design' },
-    { year: 'July 29, 2022', institute: 'freecodecamp.org', title: 'Front End Development Libraries', url: 'https://www.freecodecamp.org/certification/abu-sayed/front-end-development-libraries' },
-    { year: 'July 17, 2022', institute: 'freecodecamp.org', title: 'JavaScript Algorithms and Data Structures', url: 'https://www.freecodecamp.org/certification/abu-sayed/javascript-algorithms-and-data-structures' },
+    {
+      year: 'June 24, 2022',
+      institute: 'freecodecamp.org',
+      title: 'Responsive Web Design',
+      url: 'https://www.freecodecamp.org/certification/abu-sayed/responsive-web-design'
+    },
+    {
+      year: 'July 29, 2022',
+      institute: 'freecodecamp.org',
+      title: 'Front End Development Libraries',
+      url: 'https://www.freecodecamp.org/certification/abu-sayed/front-end-development-libraries'
+    },
+    {
+      year: 'July 17, 2022',
+      institute: 'freecodecamp.org',
+      title: 'JavaScript Algorithms and Data Structures',
+      url: 'https://www.freecodecamp.org/certification/abu-sayed/javascript-algorithms-and-data-structures'
+    },
   ],
   projects: [
     {
@@ -211,15 +200,9 @@ export const person: Person = {
       ],
     },
   ],
-}
-
-// Convenience aggregate if needed later
-person.skills.all = [
-  ...person.skills.languages,
-  ...person.skills.js_frameworks,
-  ...person.skills.css_libraries,
-  ...person.skills.backend,
-  ...person.skills.platforms,
-  ...person.skills.others,
-  ...person.skills.tools,
-]
+  languages: [
+    { name: "Bengali (Native)", label: "", percentage: "100%", width: "w-[100%]" },
+    { name: "English", label: "B2", percentage: "70%", width: "w-[70%]" },
+    { name: "German", label: "A1", percentage: "17%", width: "w-[17%]" },
+  ],
+};

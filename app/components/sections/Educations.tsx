@@ -1,9 +1,9 @@
-import type { Edu } from "../../lib/person";
 import Section from "./Section";
 import TiltCard from "../TiltCard";
 import Card from "../Card";
+import { Education } from "@/app/types";
 
-export default function Education({ items }: { items: Edu[] }) {
+export default function Educations({ items }: { items: Education[] }) {
   return (
     <Section id="education" title="Education">
       <div className="grid sm:grid-cols-2 gap-6">

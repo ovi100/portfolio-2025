@@ -4,11 +4,12 @@ import {
   About,
   Certificates,
   Contact,
-  Education,
+  Educations,
   Experience,
   Nav,
   Projects,
   Skills,
+  TechStacks,
 } from "./components";
 import { person } from "./lib/person";
 
@@ -24,16 +25,16 @@ export default function Page() {
     <main>
       <Nav />
       <About person={person} />
+      <Skills items={person.skills} />
       <Experience items={person.experiences} />
-      <Education items={person.educations} />
-      <Skills skills={person.skills} />
+      <Educations items={person.educations} />
+      <TechStacks />
       <Certificates items={person.certificates} />
       <Projects items={person.projects} />
       <Contact person={person} />
 
       <footer className="py-12 text-center text-xs text-neutral-400">
-        © {new Date().getFullYear()} Abu Sayed. Built with Next.js, Three.js and
-        Tailwind.
+        © {new Date().getFullYear()} Abu Sayed. Built with Next.js, Three.js and Tailwind.
       </footer>
     </main>
   );

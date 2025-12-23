@@ -1,7 +1,7 @@
-import type { Certificate } from "../../lib/person";
 import Section from "./Section";
 import Card from "../Card";
 import TiltCard from "../TiltCard";
+import { Certificate } from "@/app/types";
 
 const Certificates = ({ items }: { items: Certificate[] }) => {
   return (
