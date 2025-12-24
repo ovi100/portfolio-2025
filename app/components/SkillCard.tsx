@@ -80,10 +80,9 @@ const SkillCard = ({ title, items }: { title: string; items: SkillItem[] }) => {
         {title}
       </h3>
       <div className="mt-2">
-
         {items.map((item) => (
-          <>
-            <div key={item.name} className="flex items-center justify-between">
+          <div key={item.name}>
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-x-2">
                 <div className="bg-white/10 text-green-400 rounded p-1.5">
                   {Icons[item.name.toLowerCase()]}
@@ -109,7 +108,7 @@ const SkillCard = ({ title, items }: { title: string; items: SkillItem[] }) => {
                 showLabel={false}
               />
             </div>
-          </>
+          </div>
         ))}
 
       </div>
