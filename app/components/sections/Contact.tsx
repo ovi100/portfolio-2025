@@ -1,7 +1,7 @@
 import Section from "./Section";
 import { FiMapPin, FiMail, FiPhone } from "react-icons/fi";
 import { useCallback, useState } from "react";
-import ContactForm from "../ContactForm";
+// import ContactForm from "../ContactForm";
 import { Person } from "@/app/types";
 
 type ContactItem = {
@@ -70,9 +70,9 @@ export default function Contact({ person }: { person: Person }) {
           <ContactCard key={index} item={item} />
         ))}
       </div>
-      <div className="form">
+      {/* <div className="form">
         <ContactForm />
-      </div>
+      </div> */}
     </Section>
   );
 }

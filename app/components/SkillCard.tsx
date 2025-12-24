@@ -110,7 +110,6 @@ const SkillCard = ({ title, items }: { title: string; items: SkillItem[] }) => {
             </div>
           </div>
         ))}
-
       </div>
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition"
